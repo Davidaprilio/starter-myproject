@@ -1,0 +1,17 @@
+{
+    "name": "davidaprilio/starter-project",
+    "description": "Starter project template ready to use userman, authentication, authorize",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Davidaprilio\\StarterProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dav0x0",
+            "email": "david1.aprilio4@gmail.com"
+        }
+    ],
+    "require": {}
+}
