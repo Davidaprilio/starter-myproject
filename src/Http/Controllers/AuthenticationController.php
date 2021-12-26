@@ -17,9 +17,11 @@ class AuthenticationController extends Controller
     /**
      * Login action
      */
-    public function store()
+    public function store(Request $request)
     {
-        # code...
+        $request->validate([
+
+        ]);
     }
 
     /**
