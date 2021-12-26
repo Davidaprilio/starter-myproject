@@ -13,7 +13,16 @@
             "email": "david1.aprilio4@gmail.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Davidaprilio\\StarterProject\\StarterProjectServiceProvider"
+            ]
+        }
+    },
     "require": {
+        "php": "^7.3|^8.0",
+        "jenssegers/agent": "^2.6",
         "laravel/fortify": "^1.8"
     }
 }

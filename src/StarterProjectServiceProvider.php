@@ -3,6 +3,7 @@
 namespace Davidaprilio\StarterProject;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Fortify;
 
 class StarterProjectServiceProvider extends ServiceProvider
 {
@@ -23,10 +24,12 @@ class StarterProjectServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Fortify::viewPrefix('auth.');
+
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->configurePublishing();   
+        $this->bootFortify();
     }
-
 
     /**
      * Configure publishing for the package.
@@ -39,9 +42,21 @@ class StarterProjectServiceProvider extends ServiceProvider
             return;
         }
 
+        # Views
+        $this->publishes([
+            __DIR__.'/../resources/views/auth' => resource_path('views/auth'),
+        ], 'start-project');
+
         # Migrations
         $this->publishes([
             __DIR__.'/../database/migrations/2021_12_25_173044_add_new_fields_to_users_table.php' => database_path('migrations/2021_12_25_173044_add_new_fields_to_users_table.php'),
-        ], 'starter-project-migrations');
+        ], 'start-project');
+    }
+
+    protected function bootFortify()
+    {
+        Fortify::loginView(function () {
+            return view('auth.login');
+        });
     }
 }

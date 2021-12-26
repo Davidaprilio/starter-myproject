@@ -1,7 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Davidaprilio\StarterProject\Http\Controllers;
+
+Route::middleware(['web'])->group(function () {
+    
+    Route::get('/login', [Controllers\AuthenticationController::class, 'show'])->name('login');
+    Route::post('/login', [Controllers\AuthenticationController::class, 'store']);
 
 
-Route::get('/login', [AuthenticationController::class, 'index'])->name('login');
-Route::post('/login', [AuthenticationController::class, 'store']);
+    Route::middleware('auth')->group(function () {
+
+        Route::prefix('/')->name('profile.')->group(function () {
+            Route::get('profile', [Controllers\ProfileController::class, 'show'])->name('show');
+        });
+
+    });
+});
