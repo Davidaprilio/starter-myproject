@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Davidaprilio\StarterProject\Http\Controllers;
+use Davidaprilio\StarterMyproject\Http\Controllers;
 
 Route::middleware(['web'])->group(function () {
     

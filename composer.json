@@ -1,10 +1,10 @@
 {
-    "name": "davidaprilio/starter-project",
+    "name": "davidaprilio/starter-myproject",
     "description": "Starter project template ready to use userman, authentication, authorize",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Davidaprilio\\StarterProject\\": "src/"
+            "Davidaprilio\\StarterMyproject\\": "src/"
         }
     },
     "authors": [
@@ -16,12 +16,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Davidaprilio\\StarterProject\\StarterProjectServiceProvider"
+                "Davidaprilio\\StarterMyproject\\StarterProjectServiceProvider"
             ]
         }
     },
     "require": {
-        "php": "^7.3|^8.0",
         "jenssegers/agent": "^2.6",
         "laravel/fortify": "^1.8"
     }
