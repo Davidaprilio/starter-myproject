@@ -3,7 +3,7 @@
 namespace Davidaprilio\StarterMyproject;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Fortify
 
 class StarterProjectServiceProvider extends ServiceProvider
 {
@@ -24,7 +24,7 @@ class StarterProjectServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Fortify::viewPrefix('auth.');
+        Fortify::viewPrefix('auth.');
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->configurePublishing();   
@@ -55,8 +55,8 @@ class StarterProjectServiceProvider extends ServiceProvider
 
     protected function bootFortify()
     {
-        // Fortify::loginView(function () {
-            // return view('auth.login');
-        // });
+        Fortify::loginView(function () {
+            return view('auth.login');
+        });
     }
 }
