@@ -3,7 +3,7 @@
 namespace Davidaprilio\StarterMyproject;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Fortify\Fortify
+use Laravel\Fortify\Fortify;
 
 class StarterProjectServiceProvider extends ServiceProvider
 {
