@@ -13,5 +13,7 @@
             "email": "david1.aprilio4@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "laravel/fortify": "^1.8"
+    }
 }
