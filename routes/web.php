@@ -8,8 +8,8 @@ Route::middleware(['web'])->group(function () {
     Route::get('/login', [Controllers\AuthenticationController::class, 'show'])->name('login');
     Route::post('/login', [Controllers\AuthenticationController::class, 'store']);
     Route::post('/logout', [Controllers\AuthenticationController::class, 'destroy'])->name('logout');
-    Route::get('/register', [Controllers\AuthenticationController::class, 'show'])->name('register');
-    Route::post('/register', [Controllers\AuthenticationController::class, 'store']);
+    Route::get('/register', [Controllers\RegisterController::class, 'show'])->name('register');
+    Route::post('/register', [Controllers\RegisterController::class, 'store']);
     
 
     Route::middleware('auth')->group(function () {
