@@ -3,6 +3,7 @@
 namespace Davidaprilio\StarterMyproject;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class StarterProjectServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,9 @@ class StarterProjectServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->configurePublishing();   
+        $this->configurePublishing();
+
+        $this->livewireComponent();
     }
 
     /**
@@ -47,6 +50,13 @@ class StarterProjectServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../database/migrations/2021_12_25_173044_add_new_fields_to_users_table.php' => database_path('migrations/2021_12_25_173044_add_new_fields_to_users_table.php'),
         ], 'start-project');
+    }
+
+
+
+    protected function livewireComponent()
+    {
+        Livewire::component('some-component', SomeComponent::class);
     }
 
 }
